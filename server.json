@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.falsalama/proper-job",
+  "title": "Proper Job",
+  "description": "Calculate and compare indicative UK building-work budgets from supplied scope using Proper Job.",
+  "repository": {
+    "url": "https://github.com/falsalama/properjob-claude-plugin",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://www.proper-job.uk/api/mcp"
+    }
+  ]
+}
