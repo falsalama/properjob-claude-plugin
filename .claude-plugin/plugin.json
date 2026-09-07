@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "proper-job",
+  "displayName": "Proper Job",
+  "version": "1.0.0",
+  "description": "Calculate and compare indicative UK building-work budgets from supplied scope using Proper Job.",
+  "author": {
+    "name": "SR3H Ltd",
+    "url": "https://www.proper-job.uk"
+  },
+  "homepage": "https://www.proper-job.uk/chatgpt",
+  "repository": "https://github.com/falsalama/properjob-claude-plugin",
+  "license": "MIT",
+  "keywords": [
+    "proper job",
+    "properjob",
+    "UK building budgets",
+    "guide prices"
+  ]
+}
