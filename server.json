@@ -1,17 +1,45 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.falsalama/proper-job",
-  "title": "Proper Job",
-  "description": "Calculate and compare indicative UK building-work budgets from supplied scope using Proper Job.",
-  "repository": {
-    "url": "https://github.com/falsalama/properjob-claude-plugin",
-    "source": "github"
-  },
-  "version": "1.0.0",
+  "title": "Proper Job Building Cost Calculator",
+  "description": "Free UK building-cost estimates, US beta estimates and scenario comparisons. No account needed.",
+  "version": "1.0.2",
+  "websiteUrl": "https://www.proper-job.uk/chatgpt",
+  "icons": [
+    {
+      "src": "https://www.proper-job.uk/properjob-plugin-logo.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "1024x1024"
+      ]
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",
       "url": "https://www.proper-job.uk/api/mcp"
     }
-  ]
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "authentication": "none",
+      "markets": {
+        "GB": "active",
+        "US": "beta"
+      },
+      "tools": [
+        "get_estimate_requirements",
+        "calculate_guide_price",
+        "compare_guide_scenarios"
+      ],
+      "estimateBasis": "Indicative residential building budgets from supplied scope, with assumptions, exclusions and country-specific tax treatment; not fixed contractor quotes.",
+      "dataAccess": "Conversation inputs and public pricing policy only. No saved projects, customer accounts, exact addresses, drawings or payments.",
+      "ui": "Optional interactive result card for hosts supporting MCP Apps.",
+      "serverVersion": "1.0.2"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/falsalama/properjob-claude-plugin",
+    "source": "github"
+  }
 }

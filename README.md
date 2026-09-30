@@ -1,22 +1,22 @@
 # Proper Job for Claude
 
-Calculate and compare indicative UK building-work budgets with Proper Job from Claude Code or Cowork. The plugin connects Claude to Proper Job’s hosted, deterministic pricing service and adds a focused estimating workflow. It contains no pricing engine, internal rates or customer database.
+Calculate and compare indicative UK and US beta building-work budgets with Proper Job from Claude Code or Cowork. The plugin connects Claude to Proper Job’s hosted, deterministic pricing service and adds a focused estimating workflow. It contains no pricing engine, internal rates or customer database.
 
 Proper Job is owned and operated by [SR3H Ltd](https://www.proper-job.uk). See the [calculator documentation](https://www.proper-job.uk/chatgpt), [privacy policy](https://www.proper-job.uk/privacy), [terms](https://www.proper-job.uk/terms) and [support](https://www.proper-job.uk/support).
 
 ## What Claude can do
 
-- Ask for the material scope details needed for a supported UK estimate.
-- Calculate a new indicative GBP guide-price range using `calculate_guide_price`.
+- Ask for the material scope details needed for a supported UK or US beta estimate.
+- Calculate a new indicative GBP or USD guide-price range using `calculate_guide_price`.
 - Compare up to three supplied size, finish or scope alternatives using `compare_guide_scenarios`.
-- Explain VAT treatment, assumptions, exclusions and items still to confirm.
+- Explain country-specific tax treatment, assumptions, exclusions and items still to confirm.
 - Render the optional Proper Job result card where the host supports MCP Apps.
 
 No Proper Job account, subscription, API key or bearer token is required. Ordinary calculations have no Proper Job payment gate or free-use allowance. Short-window abuse controls and the host’s own limits remain. Proper Job still pays its normal hosting and database costs.
 
 ## Data and security boundary
 
-The plugin connects only to `https://www.proper-job.uk/api/mcp` over Streamable HTTP. It sends typed scope supplied in the conversation. Use an outward postcode such as `BS3`; do not send an exact address.
+The plugin connects only to `https://www.proper-job.uk/api/mcp` over Streamable HTTP. It sends typed scope supplied in the conversation. For the UK, use an outward postcode such as `BS3`. For the US, use a two-letter state and optional five-digit ZIP. Do not send an exact address.
 
 There are no tools for customer accounts, jobs, saved estimates, exact addresses, drawings, payments, email, SQL, file access, source code or full rate-table exports. Calculations are not saved as projects. The package has no executable scripts, hooks, dependency installation, local-file access or telemetry. Public requests may produce standard operational logs and short-lived abuse counters as described in Proper Job’s privacy policy.
 
@@ -26,7 +26,13 @@ Ask Claude:
 
 > Use Proper Job to calculate a guide price for a 30 m² rear extension in BS3, good domestic finish, balanced scope, semi-detached house, no kitchen work and no bathroom work. Then compare 40 m² with everything else unchanged.
 
-A Guide Price is an early indicative budget, not a fixed contractor quotation. UK coverage only. VAT treatment is stated in every result.
+A Guide Price is an early indicative budget, not a fixed contractor quotation. UK results state VAT treatment; US beta results use square feet and exclude sales and use taxes.
+
+## Card and scope support
+
+Release `1.0.2` restores Claude sandbox compatibility in the hosted MCP Apps card and keeps the older resource aliases available. The same account-free endpoint continues to return structured and textual results to hosts without MCP Apps support.
+
+An area range needs a chosen size or explicitly agreed size scenarios. Do not silently use its midpoint or assume structural steel is required. Patios, sliding-door specifications and new underfloor heating are not separately priced by the public calculator. Only named returned inclusions are confirmed: a finish band or allowance total does not establish coverage of those extras.
 
 ## Publication status
 
